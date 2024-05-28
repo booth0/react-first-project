@@ -1,12 +1,10 @@
 # Overview
+With this program, my goal was to learn the basics of using React. I specifically learned how to take user inputs and use them as variables as well as creating new elements using the JavaScript code.
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+The purpose of this program is to save the names and descriptions of future events that the user would like to remember. To use it, the user will need to input the name and description of a future event, press the 'Create Event' button, and have it added into a box for a reminder. 
 
-{Provide a description the web app that you wrote. Describe how to start a test server on your computer and what website to open up to see the first page of the app.}
+This program can be ran by first opening the terminal in the react-first-project folder, entering the command 'npm install' to make sure all the necessary files are installed, then enter 'npm start' to run the application in the browser.
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (starting the server and navigating through the web pages) and a walkthrough of the code.}
 
 [Software Demo Video](http://youtube.link.goes.here)
 
@@ -16,19 +14,12 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+For this project, I used VS Code as my code editor and worked in the React Framework, using HTML, CSS, and JavaScript.
 
-{Describe the programming language that you used and any libraries.}
-
-# Useful Websites
-
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+Useful Websites:
+The React Website (https://react.dev/)
+w3schools (https://www.w3schools.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Streamline the boxes with Flex box
