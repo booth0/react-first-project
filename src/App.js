@@ -1,12 +1,24 @@
 
 import './App.css';
-// import Header from './partials/Header';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [eventName, setEventName] = useState('');
   const [eventDescription, setEventDescription] = useState('');
   const [displayedValues, setDisplayedValues] = useState([]);
+
+  // Load data from local storage when the component mounts
+  useEffect(() => {
+      const savedValues = localStorage.getItem('events');
+      if (savedValues) {
+          setDisplayedValues(JSON.parse(savedValues));
+      }
+  }, []);
+
+  // Save data to local storage whenever displayedValues changes
+  useEffect(() => {
+      localStorage.setItem('events', JSON.stringify(displayedValues));
+  }, [displayedValues]);
 
   const handleEventNameChange = (event) => {
       setEventName(event.target.value);
@@ -18,9 +30,15 @@ function App() {
 
   const handleButtonClick = (event) => {
       event.preventDefault(); // Prevent form submission
-      setDisplayedValues([...displayedValues, { name: eventName, description: eventDescription }]);
+      const newEvent = { name: eventName, description: eventDescription };
+      setDisplayedValues([...displayedValues, newEvent]);
       setEventName(''); // Clear the event name input field after adding the value
       setEventDescription(''); // Clear the event description input field after adding the value
+  };
+
+  const handleDeleteClick = (index) => {
+      const updatedValues = displayedValues.filter((_, i) => i !== index);
+      setDisplayedValues(updatedValues);
   };
 
   return (
@@ -49,9 +67,10 @@ function App() {
                   <button onClick={handleButtonClick}>Create Event</button>
               </form>
               {displayedValues.map((event, index) => (
-                  <div class='eventbox' key={index}>
+                  <div className='eventbox' key={index}>
                       <p>Event Name: {event.name}</p>
                       <p>Event Description: {event.description}</p>
+                      <button onClick={() => handleDeleteClick(index)}>X</button>
                   </div>
               ))}
           </header>
