@@ -6,7 +6,7 @@ The purpose of this program is to save the names and descriptions of future even
 This program can be ran by first opening the terminal in the react-first-project folder, entering the command 'npm install' to make sure all the necessary files are installed, then enter 'npm start' to run the application in the browser.
 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video] https://youtu.be/Qm0DiyPhniM
 
 # Web Pages
 
